@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="caroGame"></p>
+<input type="button" value="Change value" onclick="change()">
+</body>
+</html>
+<script>
+    let hienthi=document.getElementById("caroGame");
+    let boar=[];
+    let html="";
+    for (let i=0;i<7;i++){
+        boar[i]= new Array(0,0,0,0,0,0,0);
+    }
+    for (let i=0;i<7;i++){
+        html+="<br>";
+        for (let j=0;j<7;j++){
+            html+=boar[i][j]+"&nbsp;&nbsp;";
+        }
+    }
+
+    hienthi.innerHTML=html;
+    function change() {
+        let x=prompt("Mời nhập cột: ")
+        let y=prompt("Mời nhập hàng: ")
+        html="";
+        boar[x][y]='x';
+        for (let i=0;i<7;i++){
+            html+="<br>";
+            for (let j=0;j<7;j++){
+                html+=boar[i][j]+"&nbsp;&nbsp;";
+            }
+        }
+        hienthi.innerHTML = "<hr/>" + html;
+    }
+</script>
